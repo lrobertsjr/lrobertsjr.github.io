@@ -1,0 +1,764 @@
+<!-- Hiring Team/Recruiter Content -->
+<div id="recruiter-content" class="profile-content">
+    <!-- Hero Section -->
+    <section class="hero" id="recruiter-hero-bg">
+        <h1>Senior Developer</h1>
+        <p>I'm a passionate developer with expertise in building high-impact, scalable applications. I bring deep knowledge of modern web technologies and a focus on delivering elegant solutions to complex problems.</p>
+        <div class="cta-buttons">
+            <a href="#" class="cta-button primary-btn">
+                <span class="btn-icon">▶</span> Resume
+            </a>
+            <a href="#" class="cta-button secondary-btn">
+                <span class="btn-icon">ℹ️</span> LinkedIn
+            </a>
+        </div>
+    </section><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Portfolio</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+<!-- Additional normal font for content -->
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+    body {
+        overflow-x: hidden;
+        font-family: 'Open Sans', sans-serif;
+        background-color: #141414;
+        margin: 0;
+        padding: 0;
+    }
+    
+    /* Navigation bar */
+    nav {
+        background-color: rgba(0, 0, 0, 0.8);
+        padding: 1rem;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .logo {
+        color: #E50914;
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 2rem;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    
+    .nav-links {
+        display: flex;
+        gap: 2rem;
+    }
+    
+    .nav-links a {
+        color: #fff;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+    
+    .nav-links a:hover {
+        color: #E50914;
+    }
+    
+    .profile-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 5px;
+        background-color: turquoise;
+        cursor: pointer;
+    }
+    
+    /* Hero section */
+    .hero {
+        height: 80vh;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 4rem;
+        margin-top: 70px;
+        z-index: 10;
+    }
+    
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+        z-index: -1;
+    }
+    
+    .hero h1 {
+        color: white;
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+        font-weight: 700;
+    }
+    
+    .hero p {
+        color: white;
+        font-size: 1.2rem;
+        max-width: 700px;
+        line-height: 1.6;
+        margin-bottom: 2rem;
+    }
+    
+    .cta-buttons {
+        display: flex;
+        gap: 1rem;
+    }
+    
+    .cta-button {
+        padding: 0.8rem 2rem;
+        border-radius: 4px;
+        font-weight: 600;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: all 0.3s;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+    }
+    
+    .primary-btn {
+        background-color: white;
+        color: black;
+    }
+    
+    .primary-btn:hover {
+        background-color: rgba(255, 255, 255, 0.75);
+    }
+    
+    .secondary-btn {
+        background-color: rgba(109, 109, 110, 0.7);
+        color: white;
+    }
+    
+    .secondary-btn:hover {
+        background-color: rgba(109, 109, 110, 0.4);
+    }
+    
+    .btn-icon {
+        margin-right: 0.5rem;
+    }
+    
+    /* Content rows */
+    .content-container {
+        padding: 2rem 4%;
+    }
+    
+    .row-title {
+        color: white;
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+        font-weight: 500;
+    }
+    
+    .content-row {
+        position: relative;
+        margin-bottom: 3rem;
+    }
+    
+    .row-container {
+        display: flex;
+        overflow-x: auto;
+        padding: 1rem 0;
+        scroll-behavior: smooth;
+        gap: 1rem;
+        scrollbar-width: none; /* Firefox */
+    }
+    
+    .row-container::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera */
+    }
+    
+    .content-card {
+        flex: 0 0 auto;
+        width: 260px;
+        height: 146px;
+        background-size: cover;
+        background-position: center;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+    }
+    
+    .content-card:hover {
+        transform: scale(1.08);
+        z-index: 10;
+    }
+    
+    .card-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 100%);
+        padding: 10px;
+        transition: all 0.3s ease;
+        opacity: 0;
+    }
+    
+    .content-card:hover .card-overlay {
+        opacity: 1;
+    }
+    
+    .card-title {
+        color: white;
+        font-size: 1rem;
+        margin-bottom: 5px;
+        font-weight: 600;
+    }
+    
+    .card-description {
+        color: #ddd;
+        font-size: 0.8rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        line-clamp: 2; /* Standard property for compatibility */
+        -webkit-box-orient: vertical;
+        box-orient: vertical; /* Standard property for compatibility */
+        overflow: hidden;
+    }
+    
+    .row-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 50px;
+        height: 100px;
+        background-color: rgba(0,0,0,0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 5;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+    
+    .content-row:hover .row-nav {
+        opacity: 1;
+    }
+    
+    .row-nav-left {
+        left: 0;
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+    }
+    
+    .row-nav-right {
+        right: 0;
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+    }
+    
+    .row-nav:after {
+        content: '';
+        display: block;
+        width: 20px;
+        height: 20px;
+        border-top: 3px solid white;
+        border-right: 3px solid white;
+    }
+    
+    .row-nav-left:after {
+        transform: rotate(-135deg);
+        margin-left: 5px;
+    }
+    
+    .row-nav-right:after {
+        transform: rotate(45deg);
+        margin-right: 5px;
+    }
+    
+    /* Footer */
+    footer {
+        padding: 2rem 4%;
+        background-color: #000;
+        color: #777;
+        font-size: 0.9rem;
+    }
+    
+    .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem 2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .footer-links a {
+        color: #777;
+        text-decoration: none;
+    }
+    
+    .footer-links a:hover {
+        text-decoration: underline;
+    }
+    
+    /* Handle different profile content */
+    .profile-content {
+        display: none;
+    }
+    
+    /* Profile-specific background styles */
+    #recruiter-hero-bg {
+        background-image: url('images/recruiter-hero.gif');
+    }
+    
+    #learner-hero-bg {
+        background-image: url('images/learner-hero.gif');
+    }
+    
+    #curious-hero-bg {
+        background-image: url('images/curious-hero.gif');
+    }
+</style>
+</head>
+<body>
+<!-- Navigation -->
+<nav>
+    <a href="index.html" class="logo">YOUR NAME</a>
+    <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">Professional</a>
+        <a href="#">Skills</a>
+        <a href="#">Projects</a>
+        <a href="#">Hire Me</a>
+    </div>
+    <div class="profile-avatar" onclick="window.location.href='profiles.html'"></div>
+</nav>
+
+<!-- Hiring Team/Recruiter Content -->
+<div id="recruiter-content" class="profile-content">
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Senior Developer</h1>
+        <p>I'm a passionate developer with expertise in building high-impact, scalable applications. I bring deep knowledge of modern web technologies and a focus on delivering elegant solutions to complex problems.</p>
+        <div class="cta-buttons">
+            <a href="#" class="cta-button primary-btn">
+                <span class="btn-icon">▶</span> Resume
+            </a>
+            <a href="#" class="cta-button secondary-btn">
+                <span class="btn-icon">ℹ️</span> LinkedIn
+            </a>
+        </div>
+    </section>
+
+    <!-- Content Rows -->
+    <div class="content-container">
+        <section class="content-row">
+            <h2 class="row-title">Today's Top Picks for Hiring Teams</h2>
+            <div class="row-container">
+                <div class="content-card" style="background-image: url('https://source.unsplash.com/random/260x146?travel')">
+                    <div class="card-overlay">
+                        <div class="card-title">Travel Adventures</div>
+                        <div class="card-description">Places I've visited and experiences that have shaped me.</div>
+                    </div>
+                </div>
+                <div class="content-card" style="background-image: url('https://source.unsplash.com/random/260x146?book')">
+                    <div class="card-overlay">
+                        <div class="card-title">Favorite Books</div>
+                        <div class="card-description">Books that have influenced my thinking and perspective.</div>
+                    </div>
+                </div>
+                <div class="content-card" style="background-image: url('https://source.unsplash.com/random/260x146?music')">
+                    <div class="card-overlay">
+                        <div class="card-title">Music & Art</div>
+                        <div class="card-description">Creative outlets and artistic inspirations.</div>
+                    </div>
+                </div> style="background-image: url('https://source.unsplash.com/random/260x146?work')">
+                    <div class="card-overlay">
+                        <div class="card-title">Work Permit</div>
+                        <div class="card-description">Information about my work authorization status.</div>
+                    </div>
+                </div>
+                <div class="content-card" style="background-image: url('https://source.unsplash.com/random/260x146?code')">
+                    <div class="card-overlay">
+                        <div class="card-title">Skills</div>
+                        <div class="card-description">Summary of my technical and soft skills.</div>
+                    </div>
+                </div>
+                <div class="content-card" style="background-image: url('https://source.unsplash.com/random/260x146?career')">
+                    <div class="card-overlay">
+                        <div class="card-title">Experience</div>
+                        <div class="card-description">Overview of my professional journey and key roles.</div>
+                    </div>
+                </div>
+                <div class="content-card" style="background-image: url('https://source.unsplash.com/random/260x146?certificate')">
+                    <div class="card-overlay">
+                        <div class="card-title">Certifications</div>
+                        <div class="card-description">Professional certifications and credentials.</div>
+                    </div>
+                </div>
+                <div class="content-card" style="background-image: url('https://source.unsplash.com/random/260x146?recommendation')">
+                    <div class="card-overlay">
+                        <div class="card-title">Recommendations</div>
+                        <div class="card-description">What others say about working with me.</div>
+                    </div>
+                </div>
+                <div class="content-card" style="background-image: url('https://source.unsplash.com/random/260x146?project')">
+                    <div class="card-overlay">
+                        <div class="card-title">Projects</div>
+                        <div class="card-description">Highlight of my best professional work.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row-nav row-nav-left"></div>
+            <div class="row-nav row-nav-right"></div>
+        </section>
+        
+        <section class="content-row">
+            <h2 class="row-title">Personal Projects</h2>
+            <div class="row-container">
+                <div class="content-card" style="background-image: url('https://source.unsplash.com/random/260x146?creative')">
+                    <div class="card-overlay">
+                        <div class="card-title">Side Projects</div>
+                        <div class="card-description">Fun and experimental projects I work on in my spare time.</div>
+                    </div>
+                </div>
+                <div class="content-card" style="background-image: url('https://source.unsplash.com/random/260x146?community')">
+                    <div class="card-overlay">
+                        <div class="card-title">Community Involvement</div>
+                        <div class="card-description">How I give back to the tech community and beyond.</div>
+                    </div>
+                </div>
+                <div class="content-card" style="background-image: url('https://source.unsplash.com/random/260x146?learning')">
+                    <div class="card-overlay">
+                        <div class="card-title">Continuous Learning</div>
+                        <div class="card-description">What I'm currently studying and skills I'm developing.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row-nav row-nav-left"></div>
+            <div class="row-nav row-nav-right"></div>
+        </section>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-links">
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <a href="#">Blog</a>
+        <a href="#">Resume</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">GitHub</a>
+    </div>
+    <p>© 2025 Your Name. All rights reserved.</p>
+</footer>
+
+<script>
+    // Get the profile type from URL parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const profileType = urlParams.get('profile');
+
+    // Show the appropriate content based on profile
+    if (profileType) {
+        // Hide all content sections first
+        document.querySelectorAll('.profile-content').forEach(content => {
+            content.style.display = 'none';
+        });
+
+        // Show the selected profile content
+        const selectedContent = document.getElementById(`${profileType}-content`);
+        if (selectedContent) {
+            selectedContent.style.display = 'block';
+        } else {
+            // Fallback if profile doesn't exist
+            document.getElementById('recruiter-content').style.display = 'block';
+        }
+    } else {
+        // Default to recruiter if no profile specified
+        document.getElementById('recruiter-content').style.display = 'block';
+    }
+
+    // Row navigation functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const rowContainers = document.querySelectorAll('.row-container');
+        
+        // Set up navigation for each row
+        rowContainers.forEach(container => {
+            const parent = container.parentElement;
+            const navLeft = parent.querySelector('.row-nav-left');
+            const navRight = parent.querySelector('.row-nav-right');
+            
+            if (navLeft && navRight) {
+                // Scroll left
+                navLeft.addEventListener('click', () => {
+                    container.scrollBy({
+                        left: -600,
+                        behavior: 'smooth'
+                    });
+                });
+                
+                // Scroll right
+                navRight.addEventListener('click', () => {
+                    container.scrollBy({
+                        left: 600,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+        });
+    });
+</script>
+        </section>
+
+        <section class="content-row">
+            <h2 class="row-title">My Technology Stack</h2>
+            <div class="row-container">
+                <div class="content-card" style="background-image: url('https://source.unsplash.com/random/260x146?javascript')">
+                    <div class="card-overlay">
+                        <div class="card-title">Frontend</div>
+                        <div class="card-description">React, Vue.js, Angular, HTML5, CSS3, JavaScript</div>
+                    </div>
+                </div>
+                <div class="content-card" style="background-image: url('https://source.unsplash.com/random/260x146?server')">
+                    <div class="card-overlay">
+                        <div class="card-title">Backend</div>
+                        <div class="card-description">Node.js, Python, Ruby, PHP, Java</div>
+                    </div>
+                </div>
+                <div class="content-card" style="background-image: url('https://source.unsplash.com/random/260x146?database')">
+                    <div class="card-overlay">
+                        <div class="card-title">Databases</div>
+                        <div class="card-description">MongoDB, MySQL, PostgreSQL, Redis</div>
+                    </div>
+                </div>
+                <div class="content-card" style="background-image: url('https://source.unsplash.com/random/260x146?cloud')">
+                    <div class="card-overlay">
+                        <div class="card-title">Cloud & DevOps</div>
+                        <div class="card-description">AWS, Docker, Kubernetes, CI/CD</div>
+                    </div>
+                </div>
+                <div class="content-card" style="background-image: url('https://source.unsplash.com/random/260x146?tools')">
+                    <div class="card-overlay">
+                        <div class="card-title">Tools</div>
+                        <div class="card-description">Git, JIRA, Figma, Postman, VS Code</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row-nav row-nav-left"></div>
+            <div class="row-nav row-nav-right"></div>
+        </section>
+
+        <section class="content-row">
+            <h2 class="row-title">Major Projects</h2>
+            <div class="row-container">
+                <div class="content-card" style="background-image: url('https://source.unsplash.com/random/260x146?webapp')">
+                    <div class="card-overlay">
+                        <div class="card-title">Project A</div>
+                        <div class="card-description">Full-stack web application for customer management.</div>
+                    </div>
+                </div>
+                <div class="content-card" style="background-image: url('https://source.unsplash.com/random/260x146?mobile')">
+                    <div class="card-overlay">
+                        <div class="card-title">Project B</div>
+                        <div class="card-description">Mobile app for fitness tracking and health monitoring.</div>
+                    </div>
+                </div>
+                <div class="content-card" style="background-image: url('https://source.unsplash.com/random/260x146?ecommerce')">
+                    <div class="card-overlay">
+                        <div class="card-title">Project C</div>
+                        <div class="card-description">E-commerce platform with payment processing.</div>
+                    </div>
+                </div>
+                <div class="content-card" style="background-image: url('https://source.unsplash.com/random/260x146?data')">
+                    <div class="card-overlay">
+                        <div class="card-title">Project D</div>
+                        <div class="card-description">Data visualization dashboard for analytics.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row-nav row-nav-left"></div>
+            <div class="row-nav row-nav-right"></div>
+        </section>
+    </div>
+</div>
+
+<!-- Learners' Lounge Content -->
+<div id="learner-content" class="profile-content">
+    <!-- Hero Section -->
+    <section class="hero" id="learner-hero-bg">
+        <h1>Learners' Lounge</h1>
+        <p>Welcome to a space designed for those eager to learn and grow. Here you'll find educational resources, tutorials, and insights to help you on your development journey.</p>
+        <div class="cta-buttons">
+            <a href="#" class="cta-button primary-btn">
+                <span class="btn-icon">📚</span> Learning Path
+            </a>
+            <a href="#" class="cta-button secondary-btn">
+                <span class="btn-icon">🧩</span> Challenges
+            </a>
+        </div>
+    </section>
+
+    <!-- Content Rows -->
+    <div class="content-container">
+        <section class="content-row">
+            <h2 class="row-title">Featured Tutorials</h2>
+            <div class="row-container">
+                <div class="content-card" style="background-image: url('https://source.unsplash.com/random/260x146?programming')">
+                    <div class="card-overlay">
+                        <div class="card-title">Web Development Basics</div>
+                        <div class="card-description">Getting started with HTML, CSS, and JavaScript.</div>
+                    </div>
+                </div>
+                <div class="content-card" style="background-image: url('https://source.unsplash.com/random/260x146?react')">
+                    <div class="card-overlay">
+                        <div class="card-title">React Fundamentals</div>
+                        <div class="card-description">Building interactive UIs with React.</div>
+                    </div>
+                </div>
+                <div class="content-card" style="background-image: url('https://source.unsplash.com/random/260x146?api')">
+                    <div class="card-overlay">
+                        <div class="card-title">API Integration</div>
+                        <div class="card-description">Connecting your applications to external services.</div>
+                    </div>
+                </div>
+                <div class="content-card" style="background-image: url('https://source.unsplash.com/random/260x146?database')">
+                    <div class="card-overlay">
+                        <div class="card-title">Database Design</div>
+                        <div class="card-description">Principles of effective database architecture.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row-nav row-nav-left"></div>
+            <div class="row-nav row-nav-right"></div>
+        </section>
+
+        <section class="content-row">
+            <h2 class="row-title">Coding Challenges</h2>
+            <div class="row-container">
+                <div class="content-card" style="background-image: url('https://source.unsplash.com/random/260x146?puzzle')">
+                    <div class="card-overlay">
+                        <div class="card-title">Algorithm Challenges</div>
+                        <div class="card-description">Test your problem-solving skills with these algorithmic puzzles.</div>
+                    </div>
+                </div>
+                <div class="content-card" style="background-image: url('https://source.unsplash.com/random/260x146?frontend')">
+                    <div class="card-overlay">
+                        <div class="card-title">Frontend Challenges</div>
+                        <div class="card-description">Create responsive and accessible UI components.</div>
+                    </div>
+                </div>
+                <div class="content-card" style="background-image: url('https://source.unsplash.com/random/260x146?backend')">
+                    <div class="card-overlay">
+                        <div class="card-title">Backend Challenges</div>
+                        <div class="card-description">Build robust and scalable server-side applications.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row-nav row-nav-left"></div>
+            <div class="row-nav row-nav-right"></div>
+        </section>
+
+        <section class="content-row">
+            <h2 class="row-title">Learning Resources</h2>
+            <div class="row-container">
+                <div class="content-card" style="background-image: url('https://source.unsplash.com/random/260x146?books')">
+                    <div class="card-overlay">
+                        <div class="card-title">Recommended Books</div>
+                        <div class="card-description">My top picks for programming and development books.</div>
+                    </div>
+                </div>
+                <div class="content-card" style="background-image: url('https://source.unsplash.com/random/260x146?video')">
+                    <div class="card-overlay">
+                        <div class="card-title">Video Courses</div>
+                        <div class="card-description">Curated online courses for different skill levels.</div>
+                    </div>
+                </div>
+                <div class="content-card" style="background-image: url('https://source.unsplash.com/random/260x146?blog')">
+                    <div class="card-overlay">
+                        <div class="card-title">Technical Blogs</div>
+                        <div class="card-description">Insightful articles from industry experts.</div>
+                    </div>
+                </div>
+                <div class="content-card" style="background-image: url('https://source.unsplash.com/random/260x146?podcast')">
+                    <div class="card-overlay">
+                        <div class="card-title">Tech Podcasts</div>
+                        <div class="card-description">Stay updated with the latest trends and discussions.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row-nav row-nav-left"></div>
+            <div class="row-nav row-nav-right"></div>
+        </section>
+    </div>
+</div>
+
+<!-- The Curious Watcher Content -->
+<div id="curious-content" class="profile-content">
+    <!-- Hero Section -->
+    <section class="hero" id="curious-hero-bg">
+        <h1>Behind the Scenes</h1>
+        <p>Curious about the person behind the code? This is where you'll discover my journey, interests, and what drives me as both a developer and an individual.</p>
+        <div class="cta-buttons">
+            <a href="#" class="cta-button primary-btn">
+                <span class="btn-icon">🌟</span> My Story
+            </a>
+            <a href="#" class="cta-button secondary-btn">
+                <span class="btn-icon">🔍</span> Fun Facts
+            </a>
+        </div>
+    </section>
+
+    <!-- Content Rows -->
+    <div class="content-container">
+        <section class="content-row">
+            <h2 class="row-title">Personal Journey</h2>
+            <div class="row-container">
+                <div class="content-card" style="background-image: url('https://source.unsplash.com/random/260x146?journey')">
+                    <div class="card-overlay">
+                        <div class="card-title">How I Started</div>
+                        <div class="card-description">The beginning of my coding journey and early inspirations.</div>
+                    </div>
+                </div>
+                <div class="content-card" style="background-image: url('https://source.unsplash.com/random/260x146?challenge')">
+                    <div class="card-overlay">
+                        <div class="card-title">Challenges Overcome</div>
+                        <div class="card-description">Major obstacles I've faced and how I conquered them.</div>
+                    </div>
+                </div>
+                <div class="content-card" style="background-image: url('https://source.unsplash.com/random/260x146?milestone')">
+                    <div class="card-overlay">
+                        <div class="card-title">Key Milestones</div>
+                        <div class="card-description">Significant moments that shaped my career path.</div>
+                    </div>
+                </div>
+                <div class="content-card" style="background-image: url('https://source.unsplash.com/random/260x146?future')">
+                    <div class="card-overlay">
+                        <div class="card-title">Future Vision</div>
+                        <div class="card-description">Where I see myself heading in the years to come.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row-nav row-nav-left"></div>
+            <div class="row-nav row-nav-right"></div>
+        </section>
+
+        <section class="content-row">
+            <h2 class="row-title">Beyond Code</h2>
+            <div class="row-container">
+                <div class="content-card" style="background-image: url('https://source.unsplash.com/random/260x146?hobby')">
+                    <div class="card-overlay">
+                        <div class="card-title">Hobbies & Interests</div>
+                        <div class="card-description">What I enjoy doing when I'm not coding.</div>
+                    </div>
+                </div>
+                <div class="content-card"

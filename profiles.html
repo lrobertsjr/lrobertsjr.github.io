@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Who's Watching? | Your Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #000;
+            overflow: hidden;
+        }
+        
+        .profiles-container {
+            position: relative;
+            z-index: 10;
+        }
+        
+        .profile-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            z-index: 1;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .profiles-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 5;
+        }
+    </style>
+</head>
+<body>
+    <!-- Background GIFs for each profile -->
+    <div id="recruiter-bg" class="profile-background"></div>
+    <div id="learner-bg" class="profile-background"></div>
+    <div id="curious-bg" class="profile-background"></div>
+    
+    <div class="profiles-container">
+        <h1 class="profiles-title">Who's Watching?</h1>
+        
+        <div class="profiles-row">
+            <!-- Hiring Team/Recruiter Profile -->
+            <div class="profile" data-profile-type="recruiter" data-bg="recruiter-bg">
+                <div class="profile-icon blue">
+                    <div class="profile-avatar">
+                        <div class="avatar-eyes"></div>
+                        <div class="avatar-smile"></div>
+                    </div>
+                </div>
+                <span class="profile-name">Hiring Team/Recruiter</span>
+            </div>
+
+            <!-- Learners' Lounge Profile -->
+            <div class="profile" data-profile-type="learner" data-bg="learner-bg">
+                <div class="profile-icon red">
+                    <div class="profile-avatar">
+                        <div class="avatar-eyes"></div>
+                        <div class="avatar-smile"></div>
+                    </div>
+                </div>
+                <span class="profile-name">Learners' Lounge</span>
+            </div>
+
+            <!-- The Curious Watcher Profile -->
+            <div class="profile" data-profile-type="curious" data-bg="curious-bg">
+                <div class="profile-icon yellow">
+                    <div class="profile-avatar">
+                        <div class="avatar-eyes"></div>
+                        <div class="avatar-smile"></div>
+                    </div>
+                </div>
+                <span class="profile-name">The Curious Watcher</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

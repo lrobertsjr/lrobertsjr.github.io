@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Clone - Browse</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- You may need to add an additional stylesheet specific to the browse page -->
+    <link rel="stylesheet" href="browse.css">
+</head>
+<body class="browse-page">
+    <div class="browse-container">
+        <header class="navbar">
+            <div class="navbar-left">
+                <img src="assets/netflix-logo.png" alt="Netflix" class="netflix-logo">
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="#" class="active">Home</a></li>
+                        <li><a href="#">TV Shows</a></li>
+                        <li><a href="#">Movies</a></li>
+                        <li><a href="#">New & Popular</a></li>
+                        <li><a href="#">My List</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="navbar-right">
+                <div class="search-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="profile-dropdown">
+                    <img src="assets/profile1.png" alt="Profile" class="profile-icon">
+                    <span id="profileName">Profile</span>
+                </div>
+            </div>
+        </header>
+
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">Movie Title</h1>
+                    <p class="hero-description">Movie description goes here. This exciting film follows the adventures of characters in an engaging plot filled with twists and turns.</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-play">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 3L19 12L5 21V3Z" fill="black"/>
+                            </svg>
+                            Play
+                        </button>
+                        <button class="btn btn-more-info">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="white" stroke-width="2"/>
+                                <path d="M12 16V12" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M12 8H12.01" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            More Info
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-row">
+            <h2 class="row-title">Popular on Netflix</h2>
+            <div class="row-items">
+                <!-- These would be dynamically generated in a real app -->
+                <div class="movie-item">
+                    <img src="assets/thumbnail1.jpg" alt="Movie thumbnail" class="movie-thumbnail">
+                </div>
+                <div class="movie-item">
+                    <img src="assets/thumbnail2.jpg" alt="Movie thumbnail" class="movie-thumbnail">
+                </div>
+                <div class="movie-item">
+                    <img src="assets/thumbnail3.jpg" alt="Movie thumbnail" class="movie-thumbnail">
+                </div>
+                <div class="movie-item">
+                    <img src="assets/thumbnail4.jpg" alt="Movie thumbnail" class="movie-thumbnail">
+                </div>
+                <div class="movie-item">
+                    <img src="assets/thumbnail5.jpg" alt="Movie thumbnail" class="movie-thumbnail">
+                </div>
+            </div>
+        </section>
+
+        <section class="content-row">
+            <h2 class="row-title">Trending Now</h2>
+            <div class="row-items">
+                <div class="movie-item">
+                    <img src="assets/thumbnail6.jpg" alt="Movie thumbnail" class="movie-thumbnail">
+                </div>
+                <div class="movie-item">
+                    <img src="assets/thumbnail7.jpg" alt="Movie thumbnail" class="movie-thumbnail">
+                </div>
+                <div class="movie-item">
+                    <img src="assets/thumbnail8.jpg" alt="Movie thumbnail" class="movie-thumbnail">
+                </div>
+                <div class="movie-item">
+                    <img src="assets/thumbnail9.jpg" alt="Movie thumbnail" class="movie-thumbnail">
+                </div>
+                <div class="movie-item">
+                    <img src="assets/thumbnail10.jpg" alt="Movie thumbnail" class="movie-thumbnail">
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script src="browse.js"></script>
+</body>
+</html>
